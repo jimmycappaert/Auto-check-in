@@ -1,4 +1,8 @@
-Full README to come, just a quick setup guide now.
+# Auto check-in
+
+## Do automatic Foursquare check-ins based on your current location.
+
+Full README to come, just a quick setup guide now. I didn't want to use MongoDB, MySQL, Redis, ... for storing some things right now, so I wrote two basic keyval functions that do just that. They use a local database file.
 
 You'll need:
 
