@@ -6,7 +6,7 @@
 
 // Tokens for Geoloqi
 
-$tokens['geoloqi']      = array("access"        => "");
+$tokens['geoloqi']      = array("auth_token"  	=> "");
 
 // Tokens for Foursquare
 
