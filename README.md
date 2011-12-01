@@ -12,9 +12,9 @@ You'll need:
 
 How you can set it up:
 
-1) Edit 'config/tokens.php' and add your Geoloqi auth token. Also create your own Foursquare app and get an oAuth token for it, and fill in the details in the same file.
-2) Edit config/locations.php and add your locations you want to be automatically checked in to. You need to fill in the coordinates, Foursquare venue ID and how we should push the check-in (default is public and Twitter, supposing you have it linked to your Foursquare account).
-3) Run 'autocheckin.php'.
-4) Do a happy dance.
+1. Edit 'config/tokens.php' and add your Geoloqi auth token. Also create your own Foursquare app and get an oAuth token for it, and fill in the details in the same file.
+2. Edit config/locations.php and add your locations you want to be automatically checked in to. You need to fill in the coordinates, Foursquare venue ID and how we should push the check-in (default is public and Twitter, supposing you have it linked to your Foursquare account).
+3. Run 'autocheckin.php'.
+4. Do a happy dance.
 
 Cheers.
