@@ -34,9 +34,11 @@ if(!$results->error) {
 
 			if(calcDistance($latitude, $longitude, $details['cords']['latitude'], $details['cords']['longitude']) < 0.1) {
 
-				if(getValue("VENUE_".$location) != date("Ymd", time())) {
+				$key = "VENUE_".$details['fsq']['venueid'];
 
-					setValue("VENUE_".$location, date("Ymd", time()));
+				if(getValue($key) != date("Ymd", time())) {
+
+					setValue($key, date("Ymd", time()));
 					doCheckin($location);
 
 				}

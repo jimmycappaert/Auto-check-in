@@ -68,33 +68,42 @@ function setValue($key, $value) {
 	$set = false;
 
         $fd = fopen("db", "w+");
+
+	if($fd) {
  
-        while(!feof($fd)) {
+	        while(!feof($fd)) {
 
-		$line = fgets($fd, 2048);
+			$line = fgets($fd, 2048);
+	
+        	        if(preg_match("/^$key=/", $line)) {
+	
+        	                $raw = explode("=", $line);
+                	        $contents .= $key."=".$value."\n";
+				$set = true;
+	
+        	        } else {
+	
+				$contents .= fgets($fd, 2048)."\n";
+	
+			}
+	
+        	}
 
-                if(preg_match("/^$key=/", $line)) {
-
-                        $raw = explode("=", $line);
-                        $contents .= $key."=".$value."\n";
-			$set = true;
-
-                } else {
-
-			$contents .= fgets($fd, 2048)."\n";
-
+		if($set != true) {
+	
+			$contents .= $key."=".$value."\n";
+	
 		}
+		
+		fwrite($fd, $contents);
+		fclose($fd);
+		return true;
+	
+	} else {
 
-        }
-
-	if($set != true) {
-
-		$contents .= $key."=".$value."\n";
+		return 0;
 
 	}
-	
-	fwrite($fd, $contents);
-	fclose($fd);
 
 }
 
