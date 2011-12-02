@@ -51,4 +51,6 @@ if(!$results->error) {
 
 }
 
+exit;
+
 ?>
