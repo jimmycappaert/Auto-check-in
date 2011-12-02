@@ -24,8 +24,10 @@ function getLocation() {
 	curl_setopt($ch, CURLOPT_URL, "https://api.geoloqi.com/1/location/last");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: OAuth ".$tokens['geoloqi']['auth_token']));
-	return curl_exec($ch);
+	$results = curl_exec($ch);
 	curl_close($ch);
+	
+	return $results;
 
 }
 
